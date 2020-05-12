@@ -80,3 +80,11 @@ section:not(:last-child):after {
 article {
     text-align: justify;
 }
+
+.btn-green-brown {
+    background-color: green;
+}
+
+.btn-green-brown:hover {
+    background-color: brown;
+}
