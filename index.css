@@ -63,8 +63,18 @@ td, th {
     padding: 3px;
 }
 
+td.border-none, th.border-none {
+    border: none;
+}
+
 section {
     flex-direction: column;
+}
+
+section:not(:last-child):after {
+    content: "";
+    height: 1px;
+    background: white;
 }
 
 article {
