@@ -67,11 +67,11 @@ td.border-none, th.border-none {
     border: none;
 }
 
-section {
+article {
     flex-direction: column;
 }
 
-section:not(:last-child):after {
+article:not(:last-child):after {
     content: "";
     height: 1px;
     background: white;
@@ -81,10 +81,10 @@ article {
     text-align: justify;
 }
 
-.btn-green-brown {
+.btn-green {
     background-color: green;
 }
 
-.btn-green-brown:hover {
+.btn-brown-hover:hover {
     background-color: brown;
 }

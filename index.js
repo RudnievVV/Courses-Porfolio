@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementsByTagName('body')[0].appendChild(div_hello)
 }, false)
 
-btn = document.getElementById('sub_btn')
+const btn = document.getElementById('sub_btn')
 btn.addEventListener("click", function(){
     let added_text_to_body = document.createElement('div')
 
