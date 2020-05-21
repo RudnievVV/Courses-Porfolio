@@ -88,3 +88,7 @@ article {
 .btn-brown-hover:hover {
     background-color: brown;
 }
+
+.btn-flex-center {
+    justify-content: center;
+}
