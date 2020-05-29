@@ -1,3 +1,6 @@
 # VS CODE
-.vscode/
+vscode/
 *.code-workspace
+
+# NODEJS
+node_modules/
