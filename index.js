@@ -1,13 +1,50 @@
-var static = require('node-static');
+const express = require("express");
+const exphbs  = require('express-handlebars');
 
-var fileServer = new static.Server();
+const port = 3000
 
-require('http').createServer(function (request, response) {
-    request.addListener('end', function () {
-        fileServer.serve(request, response, function (e, res) {
-            if (e && (e.status === 404)) { // If the file wasn't found
-                fileServer.serveFile('/index.html', 404, {}, request, response);
-            }
-        });
-    }).resume();
-}).listen(8080);
+const app = express();
+
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+
+app.use(express.static("."));
+
+const my_urls = {
+    home_url: "/",
+    skills_url: "/skills",
+    about_url: "/about",
+    experience_url: "/experience",
+}
+
+app.get('/', function (req, res) {
+    res.render('home', {
+        page_title: "Rudniev Vladyslav | Portfolio",
+        my_urls,
+    });
+});
+
+app.get('/about', function (req, res) {
+    res.render('about', {
+        page_title: "About Page",
+        my_urls,
+    });
+});
+
+app.get('/experience', function (req, res) {
+    res.render('experience', {
+        page_title: "My Experience",
+        my_urls,
+    });
+});
+
+app.get('/skills', function (req, res) {
+    res.render('skills', {
+        page_title: "My Skills",
+        my_urls,
+    });
+});
+
+app.listen(port, function () {
+  console.log(`My portfolio listening on port ${port}!`);
+});

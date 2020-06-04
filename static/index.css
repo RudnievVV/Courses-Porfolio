@@ -12,6 +12,9 @@ body {
     color: aqua;
     align-items: center;
 }
+#h1-header a {
+    color: aqua;
+}
 
 header {
     border-bottom: 1px solid white;
