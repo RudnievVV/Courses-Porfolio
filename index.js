@@ -46,50 +46,6 @@ app.get('/skills', function (req, res) {
     });
 });
 
-app.get('/route/users', function(req, res) {
-    let users = [
-        {
-          name: "Petya",
-          surName: "Petyanov",
-          age: 22,
-          nickName: "pet4uha"
-        },
-        {
-          name: "Vasya",
-          surName: "Vasilkov",
-          age: 44,
-          nickName: "vasile4ek"
-        },
-        {
-          name: "Ivan",
-          surName: "Ivanov",
-          age: 66,
-          nickName: "ivanovi4"
-        },
-        {
-          name: "Abdula",
-          surName: "Abrahamanov",
-          age: 88,
-          nickName: "ibnSallah"
-        }
-    ]
-    if (req.headers["content-type"]){
-        if (req.headers["content-type"] == 'application/json') {
-            res.send(users);
-        }
-        else if (req.headers["content-type"] == 'application/xml') {
-            res.send(js2xmlparser.parse('users', users));
-        }
-        else {
-            res.send('bad request')
-        };
-    }
-    else {
-        // res.send('bad request')
-        res.send(users);
-    };
-});
-
 app.route('/route/users')
     .get(function(req, res) {
         let users = [
